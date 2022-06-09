@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    País que você mora: <input type="text" name="txtn" id="txtn">
+    <input type="button" value="verificar" onclick="analisar()">
+    <div id="res"></div>
+
+    <script>
+        function analisar() {
+            var txtna = window.document.querySelector('input#txtn')
+            var país = String(txtna.value)
+            var res = window.document.querySelector('div#res')
+            res.innerHTML = `<p>Vivendo em <strong>${país}</strong></p>`
+            if(país == 'Brasil') {
+                res.innerHTML += 'Você é <strong>Brasileiro</strong>!'
+            } else {
+                res.innerHTML += 'Você é <strong>estrangeiro</strong>!'
+            }
+        }
+    </script>
+</body>
+</html>
